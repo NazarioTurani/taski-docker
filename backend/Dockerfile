@@ -15,6 +15,8 @@ COPY requirements.txt .
 
 # Выполнить в текущей директории команду терминала
 # для установки зависимостей.
+RUN apt-get update && apt-get install -y python3-distutils
+RUN pip install --upgrade pip setuptools
 RUN pip install -r requirements.txt --no-cache-dir
 
 # Скопировать всё необходимое содержимое 
